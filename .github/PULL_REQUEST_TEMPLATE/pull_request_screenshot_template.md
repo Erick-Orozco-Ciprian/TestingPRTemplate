@@ -19,6 +19,6 @@ Insert Groupings Ticket Here
 
 # Screenshots
 
-Original             |   Updated
+Original             |              Updated 
 :-------------------------: | :-------------------------|
-** original screenshot **   |  ** updates screenshot **
+** original screenshot **   |  ** updated screenshot **
