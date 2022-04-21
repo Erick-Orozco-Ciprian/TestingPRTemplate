@@ -18,5 +18,4 @@ jobs:
       with:
         java-version: ${{ matrix.java }}
     - name: Test code
-    - run: mvn 'test' 'jasmine:bdd' 
-    - run: xdg-open http://localhost:8234/
+      run: mvn test
