@@ -17,5 +17,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: ${{ matrix.java }}
-    - name: Test code
+    - name: Test Maven
       run: mvn test
+    - name: Test Jasmine
+      run: mvn jasmine:bdd
+    - name: Open jasmine website
+      run: xdg-open http://localhost:8234/
