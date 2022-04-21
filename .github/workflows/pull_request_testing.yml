@@ -1,14 +1,15 @@
 name: Test
 
-on: [push] or [pull]
-  
-      
+on: [push, pull_request]
+
 jobs:
-  build:
-    matrix:
+  test:
+    strategy:
+      fail-fast: true
+      matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         java: ['8', '11', '18']
-   runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     name: Running Java ${{ matrix.java }} on ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
@@ -17,7 +18,7 @@ jobs:
       with:
         java-version: ${{ matrix.java }}
     - name: Test code
-        run: mvn test
-        run: mvn jasmine:bdd
-    - xdg-open http://localhost:8234/
+    - run: mvn test
+    - run: mvn jasmine:bdd
+    - run: xdg-open http://localhost:8234/
     
